@@ -1,0 +1,37 @@
+2018/04/10 11:17:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in E:\my test\yii-1.1.15.022a51\framework\web\CController.php:483
+Stack trace:
+#0 E:\my test\yii-1.1.15.022a51\framework\web\CController.php(270): CController->missingAction('')
+#1 E:\my test\yii-1.1.15.022a51\framework\web\CWebApplication.php(282): CController->run('')
+#2 E:\my test\yii-1.1.15.022a51\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#3 E:\my test\yii-1.1.15.022a51\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\my test\yii-1.1.15.022a51\demos\blog\index.php(10): CApplication->run()
+#5 {main}
+REQUEST_URI=/demos/blog/index.php
+---
+2018/04/10 11:18:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in E:\my test\yii-1.1.15.022a51\framework\web\CController.php:483
+Stack trace:
+#0 E:\my test\yii-1.1.15.022a51\framework\web\CController.php(270): CController->missingAction('')
+#1 E:\my test\yii-1.1.15.022a51\framework\web\CWebApplication.php(282): CController->run('')
+#2 E:\my test\yii-1.1.15.022a51\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#3 E:\my test\yii-1.1.15.022a51\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\my test\yii-1.1.15.022a51\demos\blog\index.php(10): CApplication->run()
+#5 {main}
+REQUEST_URI=/demos/blog/
+---
+2018/04/11 10:29:05 [error] [php] Declaration of IndexController::createAction() should be compatible with CController::createAction($actionID) (E:\my test\yii-1.1.15.022a51\demos\blog\protected\controllers\IndexController.php:3)
+Stack trace:
+#0 E:\my test\yii-1.1.15.022a51\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#1 E:\my test\yii-1.1.15.022a51\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\my test\yii-1.1.15.022a51\demos\blog\index.php(10): CWebApplication->run()
+REQUEST_URI=/demos/blog/
+2018/04/11 10:29:27 [error] [php] Undefined variable: time (E:\my test\yii-1.1.15.022a51\demos\blog\protected\controllers\IndexController.php:32)
+Stack trace:
+#0 E:\my test\yii-1.1.15.022a51\framework\web\actions\CInlineAction.php(49): IndexController->actionIndex()
+#1 E:\my test\yii-1.1.15.022a51\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 E:\my test\yii-1.1.15.022a51\framework\web\CController.php(286): IndexController->runAction()
+#3 E:\my test\yii-1.1.15.022a51\framework\web\CController.php(265): IndexController->runActionWithFilters()
+#4 E:\my test\yii-1.1.15.022a51\framework\web\CWebApplication.php(282): IndexController->run()
+#5 E:\my test\yii-1.1.15.022a51\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 E:\my test\yii-1.1.15.022a51\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 E:\my test\yii-1.1.15.022a51\demos\blog\index.php(10): CWebApplication->run()
+REQUEST_URI=/demos/blog/
