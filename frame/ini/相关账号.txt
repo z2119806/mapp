@@ -1,0 +1,241 @@
+线上服务器地址IP：60.205.127.66
+帐号: banban   密码:banban@705    有sudo
+目录/home/y/share/htdocs/banshou
+
+数据库  banban: banban@iwomedia
+数据库：banban2 banban2@iwomedia  可以远程
+
+企业邮箱
+https://exmail.qq.com/domain/ads-media.cn
+caoyu@ads-media.cn
+Zxc123321
+//Cao2018
+
+码云：
+https://gitee.com/betesen_press_admin/banban_web
+caoyu@ads-media.cn
+user:caoyuadsmedia
+zxc123
+
+IOS请求：
+http://banbanapi.bjzzcb.com/api.php?r=skill/skill/version&phoenVersion=11.2&os=ios&factory=apple&model=iPhone Simulator&version=2.0.3&sid=&idfa=21120380-0A92-4A94-BC30-1C4EB9D4105D
+
+网易云
+网易云信账号：yuxiaoying@ads-media.cn
+密码:yuxiaoying123456
+
+技师端：
+13500000000
+123456
+
+扳扳后台：http://banbanadmin.bjzzcb.com/index/index
+账号：zhangsan
+
+密码：Qcwxb64882387
+
+im测试：
+101.201.114.250  root  banbanIM@705 mysql swk swk
+gitlab:
+http://101.201.114.250/   Username: caoyu   Email: caoyu@ads-media.cn   //12345678
+zxc123321
+
+im线上：
+线上服务器IP：60.205.57.34
+root：banbanIM@705
+mysql swk swk
+
+/opt/gitlab/embedded/service/gem/ruby/2.1.0/gems/unicorn-4.6.3/examples/nginx.conf
+/opt/gitlab/embedded/conf/nginx.conf
+/usr/local/nginx/conf/nginx.conf
+/data/nginx/nginx-1.13.5/conf/nginx.conf
+/var/opt/gitlab/nginx/etc/nginx.conf
+/etc/nginx/nginx.conf
+
+jira：
+https://yq.aliyun.com/articles/495560?spm=5176.10695662.1996646101.searchclickresult.689c3eb7ZvrvMY
+
+{
+    "code": 0,
+    "result": {
+        "questionList": [{
+            "id": "959",
+            "ask": "\u52a0\u6cb9\u52a0\u5230\u4e00\u534a\u5c31\u8df3\u67aa\u4e86\uff0c\u6cb9\u8868\u663e\u793a\u52a0\u4e86\u4e00\u534a",
+            "answer": "\u60a8\u597d\uff01\u6709\u4ec0\u4e48\u53ef\u4ee5\u6211\u5e2e\u5fd9\u7684\uff1f",
+            "stringTime": "1\u5929\u524d",
+            "askTime": 1523419248,
+            "answerTime": 1523418952,
+            "askType": "1",
+            "answerType": "1",
+            "carLogo": "http:\/\/7xk2k9.com1.z0.glb.clouddn.com\/carlogo\/1435742690_206.jpg",
+            "carName": "\u5954\u9a70 \u5954\u9a70C\u7ea7",
+            "recordNum": "17",
+            "userInfo": {
+                "nickname": "\u5e03\u5728\u8fd9",
+                "icon": "http:\/\/obqivs8it.bkt.clouddn.com\/ic_head_user.png"
+            },
+            "skillInfo": {
+                "nickname": "\u9648\u80fd\u658c",
+                "icon": "http:\/\/7xnnw8.com1.z0.glb.clouddn.com\/52f24855704fd5ccb6292447f3835c651504072661ploadheadImage",
+                "bodies": "\u6280\u5e08 \u9648\u80fd\u658c | \u4fee\u8f66\u5e2e",
+                "banziLevel": 2,
+                "starLevel": "3.57",
+                "isV": "3"
+            }
+        }, {
+            "id": "956",
+            "ask": "\u5f00\u542f\u7a7a\u8c03\u5236\u51b7\u4e0d\u597d\uff0c\u4f4e\u538b\u51c9 \u9ad8\u538b\u4e0d\u70eb\u6b63\u5e38\u5417\uff0c\u8fd8\u6709\u7a7a\u8c03\u5f00\u52302 3 4\u6863\u538b\u7f29\u673a\u4e0d\u505c\u7684\u5de5\u4f5c\uff0c1\u6863\u5c31\u6ca1\u4e8b",
+            "answer": "\u9ad8\u538b\u4e0d\u70eb\u4e0d\u6b63\u5e38\uff0c234\u6863\u4e0d\u5de5\u4f5c",
+            "stringTime": "1\u5929\u524d",
+            "askTime": 1523186358,
+            "answerTime": 1523186513,
+            "askType": "1",
+            "answerType": "1",
+            "carLogo": "http:\/\/7xk2k9.com1.z0.glb.clouddn.com\/carlogo\/1435742782_441.jpg",
+            "carName": "\u96ea\u4f5b\u5170 \u7231\u552f\u6b27\u4e09\u53a2",
+            "recordNum": "15",
+            "userInfo": {
+                "nickname": "\u7231\u552f\u6b27\u8f66\u4e3b",
+                "icon": "http:\/\/obqivs8it.bkt.clouddn.com\/ic_head_user.png"
+            },
+            "skillInfo": {
+                "nickname": "\u5f90\u53d1\u5b9d",
+                "icon": "",
+                "bodies": "\u6280\u5e08 \u5f90\u53d1\u5b9d | \u4fee\u8f66\u5e2e",
+                "banziLevel": 1,
+                "starLevel": "3.67",
+                "isV": "3"
+            }
+        }, {
+            "id": "954",
+            "ask": "\u6e05\u660e\u56de\u4e86\u8d9f\u8001\u5bb6 \uff0c\u8def\u4e0a\u5f00\u70ed\u98ce\u7684\u65f6\u5019\u6709\u80a1\u81ed\u5473\u513f\uff0c\u8fc7\u4e86\u597d\u5927\u4e00\u4f1a\u513f\u624d\u597d\u3002\u91cc\u9762\u662f\u6709\u4e1c\u897f\u53d8\u8d28\u4e86\u5417\uff1f",
+            "answer": "\u6bcf\u6b21\u90fd\u6709\u5417",
+            "stringTime": "1\u5929\u524d",
+            "askTime": 1523156200,
+            "answerTime": 1523156233,
+            "askType": "1",
+            "answerType": "1",
+            "carLogo": "http:\/\/7xk2k9.com1.z0.glb.clouddn.com\/carlogo\/1435742780_232.jpg",
+            "carName": "\u6c83\u5c14\u6c83 \u6c83\u5c14\u6c83V40",
+            "recordNum": "13",
+            "userInfo": {
+                "nickname": "\u590f\u591c\u6e05\u98ce\u7684\u8def\u3002t\u2006y",
+                "icon": "http:\/\/wx.qlogo.cn\/mmopen\/JCrjicctRMof1Gxlibq1iceTia4rPZ4cL1xrqfl0C5TPrXSPI0SMzhxBZevfCs5cNn5WwWic4YH1XqdnaLjEk9FFiajjggVGJia6niam\/0"
+            },
+            "skillInfo": {
+                "nickname": "\u66f9\u5b88\u519b",
+                "icon": "http:\/\/7xnnw8.com1.z0.glb.clouddn.com\/9d20ae9b9b7e22275d46faa5af8ddd971503045452ploadheadImage",
+                "bodies": "\u6280\u5e08 \u66f9\u5b88\u519b | \u4fee\u8f66\u5e2e",
+                "banziLevel": 2,
+                "starLevel": "3.99",
+                "isV": "3"
+            }
+        }, {
+            "id": "953",
+            "ask": "\u5f00\u542f\u7a7a\u8c03\u540e\u6548\u679c\u4e0d\u597d\uff0c\u538b\u529b\u90fd\u6b63\u5e38\uff0c\u4f4e\u538b\u51b7 \u9ad8\u538b\u4e0d\u70ed\u4e3a\u4ec0\u4e48 \u538b\u7f29\u673a\u4e5f\u5de5\u4f5c",
+            "answer": "\u4f60\u597d",
+            "stringTime": "1\u5929\u524d",
+            "askTime": 1523105657,
+            "answerTime": 1523105302,
+            "askType": "1",
+            "answerType": "1",
+            "carLogo": "http:\/\/7xk2k9.com1.z0.glb.clouddn.com\/carlogo\/1435742782_441.jpg",
+            "carName": "\u96ea\u4f5b\u5170 \u7231\u552f\u6b27\u4e09\u53a2",
+            "recordNum": "33",
+            "userInfo": {
+                "nickname": "\u7231\u552f\u6b27\u8f66\u4e3b",
+                "icon": "http:\/\/obqivs8it.bkt.clouddn.com\/ic_head_user.png"
+            },
+            "skillInfo": {
+                "nickname": "\u66f9\u5b88\u519b",
+                "icon": "http:\/\/7xnnw8.com1.z0.glb.clouddn.com\/9d20ae9b9b7e22275d46faa5af8ddd971503045452ploadheadImage",
+                "bodies": "\u6280\u5e08 \u66f9\u5b88\u519b | \u4fee\u8f66\u5e2e",
+                "banziLevel": 2,
+                "starLevel": "3.99",
+                "isV": "3"
+            }
+        }, {
+            "id": "942",
+            "ask": "\u4eca\u5929\u53d1\u73b0\u524d\u6321\u98ce\u73bb\u7483\u51fa\u73b0\u4e2a\u829d\u9ebb\u5927\u5c0f\u7684\u767d\u70b9\u51f9\u5751\uff0c\u5e94\u8be5\u662f\u88ab\u5c0f\u77f3\u5934\u7838\u4f24\u7684\uff0c\u8bf7\u95ee\u600e\u4e48\u5904\u7406\uff1f",
+            "answer": "\u4f60\u597d",
+            "stringTime": "1\u5929\u524d",
+            "askTime": 1522063664,
+            "answerTime": 1522063697,
+            "askType": "1",
+            "answerType": "1",
+            "carLogo": "http:\/\/7xk2k9.com1.z0.glb.clouddn.com\/carlogo\/1435742692_231.jpg",
+            "carName": "\u672c\u7530 \u98de\u5ea6",
+            "recordNum": "9",
+            "userInfo": {
+                "nickname": "\u4e50\u4e50",
+                "icon": "http:\/\/thirdqq.qlogo.cn\/qqapp\/1105854159\/4E5334659CDD39EF6E64DA799833FBB8\/100"
+            },
+            "skillInfo": {
+                "nickname": "\u6881\u79cb\u58f0",
+                "icon": "http:\/\/7xnnw8.com1.z0.glb.clouddn.com\/270564456535139mmexport1502846977942.webp",
+                "bodies": "\u6280\u5e08 \u6881\u79cb\u58f0 | \u4fee\u8f66\u5e2e",
+                "banziLevel": 2,
+                "starLevel": "3.99",
+                "isV": "3"
+            }
+        }],
+        "caseList": [{
+            "caseId": "1714",
+            "caseTitle": "2010\u5e74\u96ea\u4f5b\u5170\u79d1\u9c81\u5179\u51b7\u5374\u6db2\u6e29\u5ea6\u504f\u9ad8",
+            "caseIcon": "http:\/\/ohe5554q3.bkt.clouddn.com\/22ad7201708011705309807.jpg",
+            "caseTime": 1501578411,
+            "zanNum": "9",
+            "badNum": "2",
+            "isHandle": 0,
+            "isCollect": 1
+        }, {
+            "caseId": "1713",
+            "caseTitle": "2010\u5e74\u96ea\u4f5b\u5170\u666f\u7a0b\u52a0\u901f\u65f6\u6709\u5f3a\u70c8\u7684\u987f\u632b\u611f",
+            "caseIcon": "http:\/\/ohe5554q3.bkt.clouddn.com\/7261b201708011620293200.jpg",
+            "caseTime": 1501575632,
+            "zanNum": "3",
+            "badNum": "3",
+            "isHandle": 0,
+            "isCollect": 0
+        }, {
+            "caseId": "1712",
+            "caseTitle": "2010\u5e74\u96ea\u4f5b\u5170\u79d1\u9c81\u5179\u8d77\u52a8\u56f0\u96be\uff0c\u52a0\u901f\u4e0d\u826f\uff0c\u4e14\u7ecf\u5e38\u7184\u706b",
+            "caseIcon": "http:\/\/ohe5554q3.bkt.clouddn.com\/ec50d201708011551333697.jpg",
+            "caseTime": 1501573906,
+            "zanNum": "6",
+            "badNum": "2",
+            "isHandle": 0,
+            "isCollect": 0
+        }, {
+            "caseId": "1711",
+            "caseTitle": "2010\u5e74\u5b9d\u9a6c535i GT\u65c5\u884c\u8f66\u53d1\u52a8\u673a\u6020\u901f\u5f02\u54cd",
+            "caseIcon": "http:\/\/ohe5554q3.bkt.clouddn.com\/b5017201708011506262693.jpg",
+            "caseTime": 1501571198,
+            "zanNum": "6",
+            "badNum": "0",
+            "isHandle": 0,
+            "isCollect": 1
+        }, {
+            "caseId": "1710",
+            "caseTitle": "2012\u5e74\u5b9d\u9a6c523Li\u53d1\u52a8\u673a\u6296\u52a8\uff0c\u5c3e\u6c14\u5192\u9ed1\u70df",
+            "caseIcon": "http:\/\/ohe5554q3.bkt.clouddn.com\/4e85f201708011433198633.jpg",
+            "caseTime": 1501569208,
+            "zanNum": "10",
+            "badNum": "1",
+            "isHandle": 0,
+            "isCollect": 0
+        }],
+        "starsList": [{
+            "name": "\u9ec4\u5f00\u8363",
+            "icon": "http:\/\/ohe5554q3.bkt.clouddn.com\/27.jpg",
+            "nums": "59\u5355"
+        }, {
+            "name": "\u674e\u5b97\u534e",
+            "icon": "http:\/\/ohe5554q3.bkt.clouddn.com\/48.jpg",
+            "nums": "26\u5355"
+        }, {
+            "name": "\u80e1\u5b66\u6797",
+            "icon": "http:\/\/ohe5554q3.bkt.clouddn.com\/47.jpg",
+            "nums": "20\u5355"
+        }]
+    }
+}

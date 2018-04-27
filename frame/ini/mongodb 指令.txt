@@ -1,0 +1,48 @@
+use dbname;切换到指定库；
+db.chatOffline.remove({});删除chatOffline表里的所有数据；
+show dbs;查看所有库
+db.getCollectionNames();查看库里的表
+建立索引：db.chat.ensureIndex({"orderNum":1});
+查看索引创建进度：db.currentOp();
+db.auth("yangdanqing","yangdanqing");
+
+
+
+进入mongodb流程:
+1.mongo
+2.use cartalk;
+3.db.auth("swk","swk");
+
+
+
+mongod  --auth --dbpath /var/lib/mongodb
+mongo admin -u danqingy -p dbs
+
+
+mongod --auth --dbpath=/var/lib/mongodb --fork --logpath=/var/log/mongodb/mongod.log //后台运行
+mongod  --dbpath=/var/lib/mongodb --fork --logpath=/var/log/mongodb/mongod.log //后台运行
+mongod  --auth --dbpath=/opt/mongodb --fork --logpath=/opt/mongodb/log/mongodb.log
+
+
+关闭
+ ps  -ef |grep mongodb 找到你要查找的进程号
+kill -2  pid    杀掉
+
+
+db.createUser({user:"root", pwd:"123456",roles:[{role:"root",db:"admin"}]}); 添加用户
+
+root,123456 管理员账号
+
+db.createUser({user:"swk", pwd:"swk",roles:[{role:"readWrite",db:"cartalk"}]});
+
+swk,123 存聊天记录账号
+
+删除用户的聊天记录：db.chat.remove({"from":"18500000000@cowthan"});db.chat.remove({"to":"18500000000@cowthan"});
+
+删除包含s字符串的数据 db.tables.find({"name":/s.*/})
+
+导出表   mongoexport -d cartalk -c swk -p swk -o /opt/chat/chat.dat 
+
+db.chat.find({"orderNum":/^20170510.*/}).count();
+db.chat.find({"from":/^18500000000@cowthan.*/});
+db.chat.find({"to":/^18500000000@cowthan.*/});
