@@ -10,7 +10,10 @@
 // +----------------------------------------------------------------------
 
 // [ 应用入口文件 ]
-
+function v($d)
+{
+	var_dump($d);die;
+}
 // 定义应用目录
 //define('APP_PATH', __DIR__ . '/../../../frame/tp5/application/');
 define('APP_PATH', __DIR__ . '/../noteapp/');
