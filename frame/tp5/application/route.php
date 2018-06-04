@@ -8,8 +8,15 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
+use think\Route;
 
-return [
+Route::rule([
+    '/'  =>  'index/index',
+    '/login'  =>  'login/login',
+    
+],'','GET');
+
+/*return [
     '__pattern__' => [
         'name' => '\w+',
     ],
@@ -18,4 +25,4 @@ return [
         ':name' => ['index/hello', ['method' => 'post']],
     ],
 
-];
+];*/
