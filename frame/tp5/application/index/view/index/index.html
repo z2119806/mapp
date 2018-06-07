@@ -1,13 +1,31 @@
 {extend name="base/base" /}
+{block name="link"}
+<link rel="stylesheet" type="text/css" href="__PNCSS__/login.css">
+{/block}
+
 {block name="body"}
-<div class="index-head"></div>
+<div class="navbar navbar-inverse navbar-fixed-top">
+	
+</div>
 
 <div class="index-main">
-	<div class="im-for"></div>
-	<div class="im-login"></div>
+	<div class="im-for">
+		<div class='imf-img m1 c1' style="background-image:url('__PNIMG__/1.jpg');"></div>
+	</div>
+	<div class="im-upright"></div>
+	<div class="im-login">
+		<div class="form-signin c1">
+	        <h2 class="form-signin-heading">登<i class="i1"></i>陆</h2>
+	        <label for="inputEmail" class="sr-only">邮箱地址</label>
+	        <input type="text" id="login-email" class="form-control a1 b2" placeholder="Email address">
+	        <label for="inputPassword" class="sr-only">密码</label>
+	        <input type="password" id="login-password" class="form-control a1 b2" placeholder="Password">
+	        <button class="btn btn-lg btn-primary btn-block b2" type="submit">确<i class="i1"></i>定</button>
+      </div>
+	</div>
 </div>
 
 <div class="index-message"></div>
 
-<div class="index-footer"></div>
+<footer class="blog-footer"></footer>
 {/block}
