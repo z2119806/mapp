@@ -1,17 +1,19 @@
 .index-main{
-	margin-top:50px;
-	height:50%;
+	padding-top:50px;
 	width:100%;
+	min-height:400px;
+	float:left;
 }
 .im-for{
-	height:100%;
+	height:46%;
 	width:52%;
-	float:left;
+	float:right;
 }
 .im-login{
-	height:100%;
-	width:calc(46%);
-	float:left;
+	min-width:335px;
+	width:46%;
+	height:46%;
+	float:right;
 }
 .form-signin{
 	max-width: 300px;
