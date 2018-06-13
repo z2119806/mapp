@@ -1,6 +1,7 @@
 {extend name="base/base" /}
 {block name="link"}
 <link rel="stylesheet" type="text/css" href="__PNCSS__/login.css">
+<script type="text/javascript" src="__PJS__/common.js"></script>
 {/block}
 
 {block name="body"}
@@ -27,4 +28,16 @@
 <section class="index-message"></section>
 
 <footer class="blog-footer"></footer>
+{/block}
+
+{block name="js"}
+<script type="text/javascript">
+	function ()
+	{
+		var a = $(".index-main").html();
+		alert(a)
+	}
+
+	a()
+</script>
 {/block}
