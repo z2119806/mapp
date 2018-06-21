@@ -3,7 +3,7 @@
  *
  * @return {bool} [true pc false orther]
  */
-function IsPC()
+var isOs = function()
 {  
 	var userAgentInfo = navigator.userAgent;  
 	var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
