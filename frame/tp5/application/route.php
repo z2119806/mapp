@@ -8,13 +8,13 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-use think\Route;
+/*use think\Route;
 
 Route::rule([
-    '/'  =>  'index/index',
-    '/login'  =>  'login/login',
+    '/'  =>  'index/index/index',
+    '/user/index'  =>  'index/user/index',
     
-],'','GET');
+],'','GET');*/
 
 /*return [
     '__pattern__' => [
