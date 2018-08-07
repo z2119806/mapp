@@ -1,11 +1,11 @@
 <?php
 namespace app\index\controller;
 
-class Login
+class User
 {
-    public function login()
+    public function index()
     {
-    	echo 1;
+    	echo 1;die;
         return view();
     }
 }
