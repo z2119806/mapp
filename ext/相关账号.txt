@@ -88,6 +88,9 @@ https://yq.aliyun.com/articles/495560?spm=5176.10695662.1996646101.searchclickre
 极光：
 极光：244493834@qq.com   密码Banban666  
 
+120.27.11.63  线上web
+root Banban123  现在的web 服务器
+
 http://101.201.114.250:8090/api.php?r=user/order/msgList&order_num=2018031299101525
 {
     "code": 0,
