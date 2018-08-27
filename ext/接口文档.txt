@@ -1,0 +1,15 @@
+第三方登陆
+/user.third.login
+-微信 qq 微博
+
+搜索
+/search.list
+- 全局搜索 分类搜索
+
+分类列表
+/type.list
+/type.save 添加修改删除
+
+内容
+/note.detail
+/note.save 添加修改删除
