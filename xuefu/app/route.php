@@ -1,4 +1,15 @@
 <?php
-$pix = explode('/', $_SERVER['REQUEST_URI']);
 
-require_once "route/{$pix[1]}/{$pix[2]}.php";
+// 处理url
+$url = explode('.', $_SERVER['REQUEST_URI']);
+$work = $url[0];
+
+// 转到
+try
+{   
+	require_once 'route/' . $work . '.php';
+
+} catch (\Exception $e)
+{   
+	echo 'route error';die;
+}
