@@ -12,6 +12,6 @@ class User extends BaseController
 
     public function register()
     {
-    	return 2;
+    	
     }
 }

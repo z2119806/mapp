@@ -7,9 +7,9 @@ $work = $url[0];
 // 转到
 try
 {   
-	require_once 'route/' . $work . '.php';
+	require_once 'route' . $work . '.php';
 
-} catch (\Exception $e)
+} catch (Exception $e)
 {   
-	echo 'route error';die;
+	exit('Route Error');
 }
