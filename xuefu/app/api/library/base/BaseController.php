@@ -7,14 +7,22 @@ use \app\api\library\constant\ReturnMessage,
 
 class BaseController
 {
+	protected $data;
+
+	/**
+	 * 返回真假
+	 */
+	public function yesno($code = ReturnMessage::REQUEST_FAIL)
+	{
+		$this->data ? $this->yes($this->data) : $this->no($code);
+	}
+
 	/**
 	 * 请求成功
 	 */
-	public function yes($data = [])
+	public function yes()
 	{
-		$data && $data = $this->setData($data);
-
-		return $this->result(ReturnMessage::REQUEST_SUCCESS, $data);
+		return $this->result(ReturnMessage::REQUEST_SUCCESS, $this->data);
 	}
 
 	/**
@@ -23,28 +31,6 @@ class BaseController
 	public function no($code = ReturnMessage::REQUEST_FAIL)
 	{
 		return $this->result($code);
-	}
-
-	/**
-	 * 处理返回数据为字符串
-	 */
-	public $res = [];
-	public function setData($data)
-	{
-		foreach ($data as $k => $v)
-		{
-			if (is_array($v))
-			{
-				$this->setData($v);
-
-			}else
-			{
-				$data[$k] = (string)$v;
-				$this->res = array_merge($this->res, $data);
-			}
-		}
-
-		return $this->res;
 	}
 
 	/**

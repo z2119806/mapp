@@ -65,6 +65,9 @@ class Route
     // 当前路由执行过程中的参数
     private static $option = [];
 
+    // 自定义
+    public static $routePrefix = '';
+
     /**
      * 注册变量规则
      * @access public
@@ -231,8 +234,8 @@ class Route
      */
     public static function rule($rule, $route = '', $type = '*', $option = [], $pattern = [])
     {
-        $rule = Env::get('ROUTE_PREFIX') . '.' . $rule;
-        $route = Env::get('ROUTE_PREFIX') . '/' . $route;
+        $rule = self::$routePrefix . '.' . $rule;
+        $route = self::$routePrefix . '/' . $route;
         
         $group = self::getGroup('name');
 

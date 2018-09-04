@@ -5,6 +5,10 @@ use \app\api\library\base\BaseModel;
 
 class User extends BaseModel
 {
+	protected $visible = [
+		'user_id', 'user_email'
+	];
+
 	public function add()
 	{
 		$this->user_email = '12';
@@ -12,8 +16,11 @@ class User extends BaseModel
 		$this->save();
 	}
 
-	public static function find()
+	/**
+	 * 根据邮箱查询用户是否存在
+	 */
+	public static function one($email)
 	{
-		return self::get(10004);
+		return self::where('user_email', $email)->find() ? true : false;
 	}
 }

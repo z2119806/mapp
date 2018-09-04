@@ -1,24 +1,29 @@
 <?php
 namespace app\api\controller;
 
-use \app\api\library\base\BaseController,
+use \think\Loader,
+    \app\api\library\base\BaseController,
+    \app\api\library\constant\ReturnMessage,
 	\app\api\model\User as U;
 
 class User extends BaseController
 {   
     /**
      * 根据邮箱用户是否存在
+     *
+     * @param $[email] [<邮箱>]
+     * @return [json]
+     * @author [🍀] [2018.09.04]
      */
-    public function isUser()
+    public function exist()
     {   
-        $validate = \think\Loader::validate("User");
-        if(! $validate->check(input()))
-        {
-            $this->error();
-            echo $validate->getError();die;
-        }
+        $data = input();
+        $validate = Loader::validate("User");
+        if(! $validate->scene('exist')->check($data)) $this->no($validate->getError());
 
-        $this->yes([['a'=>123],['b'=>3,'c'=>'as'],1231]);
+        $data = U::one($data['email']);
+
+        $this->yesno(ReturnMessage::USER_NOT_EXIST);
     }
 
     /**
@@ -27,8 +32,18 @@ class User extends BaseController
      */
     public function login()
     {
-        $user = new U;
-     
-        $user->add();
+        $this->data = input();
+        $validate = Loader::validate("User");
+        if(! $validate->check($this->data)) $this->no($validate->getError());
+
+        if (U::one($this->data['email']))
+        {
+
+
+        }else
+        {
+            $user = new U;
+            $user->add();
+        }
     }
 }
