@@ -8,13 +8,13 @@ class User extends BaseValidate
 {
 	protected $rule = [
 		'email' => 'require|email',
-		'password' => 'require|length:6,16'
+		'password' => 'require|length:32'
     ];
 
     protected $message = [
         'email.email' => rm::EMAIL_ERROR,
         'email.require' => rm::EMAIL_NOT_EXIST,
-        'password.length' => rm::PASSWORD_LENGTH,
+        'password.length' => rm::PASSWORD_MD5_LENGTH,
         'password.require' => rm::PASSWORD_NOT_EXIST,
     ];
 

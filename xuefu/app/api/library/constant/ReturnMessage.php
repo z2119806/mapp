@@ -8,7 +8,7 @@ class ReturnMessage
 
 	const USER_NOT_EXIST = 10000;
 
-	const PASSWORD_LENGTH = 10100;
+	const PASSWORD_MD5_LENGTH = 10100;
 	const PASSWORD_NOT_EXIST = 10101;
 
 	const EMAIL_ERROR = 10300;
@@ -20,7 +20,7 @@ class ReturnMessage
 
 		self::USER_NOT_EXIST => "好像并没有这个用户，先注册个吧。",
 
-		self::PASSWORD_LENGTH => "老铁说明不写了6-16位就可以了嘛？",
+		self::PASSWORD_MD5_LENGTH => "系统：md5长度不等于32位",
 		self::PASSWORD_NOT_EXIST => "不输密码登陆个啥啊。",
 
 		self::EMAIL_ERROR => "这种邮箱格式目前无法识别啊！",

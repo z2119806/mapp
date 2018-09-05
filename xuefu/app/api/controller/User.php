@@ -21,7 +21,7 @@ class User extends BaseController
         $validate = Loader::validate("User");
         if(! $validate->scene('exist')->check($data)) $this->no($validate->getError());
 
-        $data = U::one($data['email']);
+        $data = U::one($data['email']); 
 
         $this->yesno(ReturnMessage::USER_NOT_EXIST);
     }
@@ -43,7 +43,7 @@ class User extends BaseController
         }else
         {
             $user = new U;
-            $user->add();
+            $user->add($this->data);
         }
     }
 }
