@@ -8,10 +8,12 @@
 // +----------------------------------------------------------------------
 // | Author: 流年 <liu21st@gmail.com>
 // +----------------------------------------------------------------------
+use \app\api\library\tool\TpFiveCurrency;
 
 // 应用公共文件
-function p($d)
+function currency($param)
 {
-	echo "<pre>";
-	print_r($d);
+	$obj = new TpFiveCurrency;
+
+	return $obj->tpException($param);
 }

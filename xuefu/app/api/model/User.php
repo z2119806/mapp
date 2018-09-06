@@ -15,15 +15,18 @@ class User extends BaseModel
 	 */
 	public function add($data)
 	{
-		p($this->setToken(12332, 123771263));die;
 		$this->user_email = $data['email'];
 		$this->user_password = $this->setPassword($data['password']);
 		$this->user_salt = $this->setSalt();
+		$this->user_name = $data['email'];
+		$this->user_icon = '...';
 
-		$this->save();
+		//$this->save();
+		
+		$this->user_token = $this->setToken('', '');
+		//$this->user_token = $this->setToken($this->getAttr('user_id'), $this->getAttr('create_time'));
 
-		$this->user_token = $this->setToken($this->getAttr('user_id'), $this->getAttr('create_time'));
-		$this->save();
+		//$this->save();
 	}
 
 	/**
@@ -55,23 +58,20 @@ class User extends BaseModel
 	 */
 	public function setToken($uid, $time)
 	{
+		currency(['uid' => $uid, 'time' => $time]);
+
 	    $arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
 	    $key = Config::get('api_secret_key');
 	    $str = $time . random_int(100, 999) . $uid;
-	    
 	    $len = strlen($str);
-
+	    
 	    // 设置干扰
-	    $interfere = rand();
-	    p(mt_rand(2,4));die;
+	    $interfere = $this->setInterfere($len);
 
-	    $md5 = substr($md5, 0, $len);
-	    
 	    $result = '';
-	    
 	    for ($i = 0; $i < $len; $i ++)
 	    {
-	        $result .= $arr[$str[$i]] . $md5[$i];
+	        $result .= $arr[$str[$i]] . $interfere[$i];
 	    }
 
 	    return $result;
@@ -93,18 +93,33 @@ class User extends BaseModel
 	            $str .= $arr[$token[$i]];
 	        }
 	    }
-
+	    
 	    // 设置对象
 	    $result = new \stdClass;
 
-	    $type = substr($str, 0, 1);
-	    $time = substr($str, 1, 10);
-	    $user_id = substr($str, 14);
+	    $time = substr($str, 0, 10);
+	    $user_id = substr($str, 13);
 
 	    $result->user_id = $user_id;
-	    $result->type = $type;
 	    $result->time = $time;
 
 	    return $result;
+	}
+
+	/**
+	 * 设置干扰项
+	 */
+	public function setInterfere($len)
+	{
+		$str = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$str = str_shuffle($str);
+		$res = '';
+
+		for ($i = 0; $i < $len; $i ++)
+		{
+			$res .= $str[$i];
+		}
+		
+		return $res;
 	}
 }

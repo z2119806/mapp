@@ -11,4 +11,6 @@ class BaseModel extends Model
 	protected $createTime = 'create_time';
 	// 更新时间字段
 	protected $updateTime = 'update_time';
+	// 时间字段取出后的默认时间格式
+    protected $dateFormat = false;
 }
