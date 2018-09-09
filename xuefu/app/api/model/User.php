@@ -21,12 +21,11 @@ class User extends BaseModel
 		$this->user_name = $data['email'];
 		$this->user_icon = '...';
 
-		//$this->save();
+		$this->save();
 		
-		$this->user_token = $this->setToken('', '');
-		//$this->user_token = $this->setToken($this->getAttr('user_id'), $this->getAttr('create_time'));
+		$this->user_token = $this->setToken($this->getAttr('user_id'), $this->getAttr('create_time'));
 
-		//$this->save();
+		$this->save();
 	}
 
 	/**
@@ -58,7 +57,7 @@ class User extends BaseModel
 	 */
 	public function setToken($uid, $time)
 	{
-		currency(['uid' => $uid, 'time' => $time]);
+		cException(['uid' => $uid, 'time' => $time]);
 
 	    $arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
 	    $key = Config::get('api_secret_key');

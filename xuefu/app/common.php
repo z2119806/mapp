@@ -11,7 +11,7 @@
 use \app\api\library\tool\TpFiveCurrency;
 
 // 应用公共文件
-function currency($param)
+function cException($param)
 {
 	$obj = new TpFiveCurrency;
 
