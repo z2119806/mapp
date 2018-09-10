@@ -1,8 +1,8 @@
 <?php
 namespace app\api\validate;
 
-use \app\api\library\base\BaseValidate,
-	\app\api\library\constant\ReturnMessage as rm;
+use \app\library\base\BaseValidate,
+	\app\library\constant\ReturnMessage as rm;
 
 class User extends BaseValidate
 {

@@ -1,7 +1,7 @@
 <?php
-namespace app\api\library\tool;
+namespace app\library\tool;
 
-use \app\api\library\constant\ApiSysException as ase;
+use \app\library\constant\ApiSysException as ase;
 
 class TpFiveCurrency
 {
@@ -10,6 +10,7 @@ class TpFiveCurrency
 	 */
 	public function tpException($param)
 	{
+		$res = false;
 		foreach ($param as $k => $v)
 		{
 			if (! $v) 
@@ -18,7 +19,7 @@ class TpFiveCurrency
 				break;
 			}
 		}
-
-		exception('异常消息:' . $res . '为空');
+		
+		$res && exception(ase::exceptionMessage($res));
 	}
 }

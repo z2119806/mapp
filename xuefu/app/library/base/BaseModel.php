@@ -1,5 +1,5 @@
 <?php
-namespace app\api\library\base;
+namespace app\library\base;
 
 use think\Model;
 

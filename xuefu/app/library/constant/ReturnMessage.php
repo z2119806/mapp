@@ -1,5 +1,5 @@
 <?php
-namespace app\api\library\constant;
+namespace app\library\constant;
 
 class ReturnMessage
 {

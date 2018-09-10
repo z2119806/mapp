@@ -2,8 +2,8 @@
 namespace app\api\controller;
 
 use \think\Loader,
-    \app\api\library\base\BaseController,
-    \app\api\library\constant\ReturnMessage,
+    \app\library\base\BaseController,
+    \app\library\constant\ReturnMessage,
 	\app\api\model\User as U;
 
 class User extends BaseController
@@ -23,27 +23,27 @@ class User extends BaseController
 
         $data = U::one($data['email']);
 
-        $this->yesno(ReturnMessage::USER_NOT_EXIST);
+        $this->yesno($data, ReturnMessage::USER_NOT_EXIST);
     }
 
     /**
      * 登陆或者注册
-     * 
+     *
+     * 当不存在的时候注册，否则登陆
      */
     public function login()
     {
-        $this->data = input();
+        $data = input();
         $validate = Loader::validate("User");
-        if(! $validate->check($this->data)) $this->no($validate->getError());
+        if(! $validate->check($data)) $this->no($validate->getError());
 
-        if (U::one($this->data['email']))
-        {
-
-
-        }else
+        $user = U::one($data['email']);
+        if (! $user)
         {
             $user = new U;
-            $user->add($this->data);
+            $user = $user->add($data);
         }
+
+        $user ? $this->yes($user) : $this->no();
     }
 }

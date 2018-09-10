@@ -1,28 +1,26 @@
 <?php
-namespace app\api\library\base;
+namespace app\library\base;
 
-use \app\api\library\constant\ReturnMessage,
+use \app\library\constant\ReturnMessage,
 	\think\Response,
 	\think\exception\HttpResponseException;
 
 class BaseController
 {
-	protected $data;
-
 	/**
 	 * 返回真假
 	 */
-	public function yesno($code = ReturnMessage::REQUEST_FAIL)
+	public function yesno($data = [], $code = ReturnMessage::REQUEST_FAIL)
 	{
-		$this->data ? $this->yes($this->data) : $this->no($code);
+		$data ? $this->yes($data) : $this->no($code);
 	}
 
 	/**
 	 * 请求成功
 	 */
-	public function yes()
+	public function yes($data)
 	{
-		return $this->result(ReturnMessage::REQUEST_SUCCESS, $this->data);
+		return $this->result(ReturnMessage::REQUEST_SUCCESS, $data);
 	}
 
 	/**

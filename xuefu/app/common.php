@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: 流年 <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-use \app\api\library\tool\TpFiveCurrency;
+use \app\library\tool\TpFiveCurrency;
 
 // 应用公共文件
 function cException($param)

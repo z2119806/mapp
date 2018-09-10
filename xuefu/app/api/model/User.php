@@ -1,13 +1,14 @@
 <?php
 namespace app\api\model;
 
-use \app\api\library\base\BaseModel,
+use \app\library\base\BaseModel,
+	\app\library\constant\ServiceMessage as sm,
 	\think\Config;
 
 class User extends BaseModel
 {
 	protected $visible = [
-		'user_id', 'user_email'
+		'user_id', 'user_email', 'user_token', 'user_name', 'user_sex', 'user_age', 'user_icon', 'status'
 	];
 
 	/**
@@ -15,17 +16,37 @@ class User extends BaseModel
 	 */
 	public function add($data)
 	{
-		$this->user_email = $data['email'];
-		$this->user_password = $this->setPassword($data['password']);
-		$this->user_salt = $this->setSalt();
-		$this->user_name = $data['email'];
-		$this->user_icon = '...';
+		$this->startTrans();
 
-		$this->save();
-		
-		$this->user_token = $this->setToken($this->getAttr('user_id'), $this->getAttr('create_time'));
+		try
+		{
+		    $this->user_email = $data['email'];
+		    $this->user_password = $this->setPassword($data['password']);
+		    $this->user_salt = $this->setSalt();
+		    $this->user_name = $data['email'];
+		    $this->user_icon = '...';
 
-		$this->save();
+		    $this->save();
+		    
+		    $this->user_token = $this->setToken($this->getAttr('user_id'), $this->getAttr('create_time'));
+
+		    $this->save();
+		    $this->commit();
+
+		}catch (\Exception $e) 
+		{
+		    $this->rollback();
+
+		    return false;
+		}
+
+		$this->user_age = 0;
+		$this->user_sex = 0;
+		$this->status = 1;
+
+		$res['user'] = $this->toArray();
+
+		return $res;
 	}
 
 	/**
@@ -33,7 +54,16 @@ class User extends BaseModel
 	 */
 	public static function one($email)
 	{
-		return self::where('user_email', $email)->find() ? true : false;
+		$user = self::where('user_email', $email)->find();
+
+		if ($user) 
+		{
+			$res['user'] = $user->toArray();
+
+			return $res;
+
+		}else 
+			return false;
 	}
 
 	/**
