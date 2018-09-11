@@ -7,6 +7,16 @@ use \app\library\constant\ReturnMessage,
 
 class BaseController
 {
+	public $user; // 用户
+	public $notLogin;
+
+	public function __construct()
+	{
+		// 验证登陆
+		
+
+	}
+
 	/**
 	 * 返回真假
 	 */

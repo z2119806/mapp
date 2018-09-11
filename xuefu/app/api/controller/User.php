@@ -8,6 +8,8 @@ use \think\Loader,
 
 class User extends BaseController
 {   
+    public $netLogin = ['login', 'exist'];
+
     /**
      * 根据邮箱用户是否存在
      *
