@@ -2,19 +2,29 @@
 namespace app\library\base;
 
 use \app\library\constant\ReturnMessage,
-	\think\Response,
 	\think\exception\HttpResponseException;
 
 class BaseController
 {
 	public $user; // 用户
-	public $notLogin;
+	public $notLogin = []; // 不验证
 
 	public function __construct()
 	{
-		// 验证登陆
-		
+		$request = request();
 
+		// 验证登陆
+		$url = $request->url();
+		$api = substr($url, strpos($url, '.') + 1);
+
+		if (! in_array($api, $this->notLogin))
+		{
+			$token = $request->header('token');
+			if (! $token) $this->no(ReturnMessage::USER_NOT_EXIST);
+
+			$this->user = user($token, 2);
+			if ($this->user["user"]['status'] == 0) $this->no(ReturnMessage::USER_IS_EXCEPTION);
+		}
 	}
 
 	/**

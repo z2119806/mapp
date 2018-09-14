@@ -8,7 +8,7 @@ use \think\Loader,
 
 class User extends BaseController
 {   
-    public $netLogin = ['login', 'exist'];
+    public $notLogin = ['login', 'exist'];
 
     /**
      * 根据邮箱用户是否存在
@@ -23,7 +23,7 @@ class User extends BaseController
         $validate = Loader::validate("User");
         if(! $validate->scene('exist')->check($data)) $this->no($validate->getError());
 
-        $data = U::one($data['email']);
+        $data = user($data['email']);
 
         $this->yesno($data, ReturnMessage::USER_NOT_EXIST);
     }
@@ -39,7 +39,7 @@ class User extends BaseController
         $validate = Loader::validate("User");
         if(! $validate->check($data)) $this->no($validate->getError());
 
-        $user = U::one($data['email']);
+        $user = user($data['email']);
         if (! $user)
         {
             $user = new U;

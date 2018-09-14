@@ -50,11 +50,25 @@ class User extends BaseModel
 	}
 
 	/**
-	 * 根据邮箱查询用户是否存在
+	 * 根据type查询用户是否存在
+	 *
+	 * @param $param 参数
+	 * @param $type  1 邮箱 2 token
 	 */
-	public static function one($email)
+	public static function one($param, $type = 1)
 	{
-		$user = self::where('user_email', $email)->find();
+		switch ($type) 
+		{
+			case 1:
+				list($key, $value) = ['user_email', $param];
+				break;
+
+			case 2:
+				list($key, $value) = ['user_token', $param];
+				break;
+		}
+
+		$user = self::where($key, $value)->find();
 
 		if ($user) 
 		{
@@ -62,8 +76,9 @@ class User extends BaseModel
 
 			return $res;
 
-		}else 
-			return false;
+		}
+		
+		return false;
 	}
 
 	/**
