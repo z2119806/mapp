@@ -19,13 +19,15 @@ class User extends BaseController
      */
     public function exist()
     {   
+        // 获取值
         $data = input();
+
+        // 验证
         $validate = Loader::validate("User");
         if(! $validate->scene('exist')->check($data)) $this->no($validate->getError());
 
-        $data = user($data['email']);
-
-        $this->yesno($data, ReturnMessage::USER_NOT_EXIST);
+        // 返回
+        $this->yesno(user($data['email']), ReturnMessage::USER_NOT_EXIST);
     }
 
     /**
@@ -35,10 +37,14 @@ class User extends BaseController
      */
     public function login()
     {
+        // 获取值
         $data = input();
+
+        // 验证
         $validate = Loader::validate("User");
         if(! $validate->check($data)) $this->no($validate->getError());
 
+        // 判断注没注册过
         $user = user($data['email']);
         if (! $user)
         {
@@ -46,6 +52,7 @@ class User extends BaseController
             $user = $user->add($data);
         }
 
-        $user ? $this->yes($user) : $this->no();
+        // 返回
+        $this->yesno($user);
     }
 }

@@ -2,7 +2,7 @@
 namespace app\api\model;
 
 use \app\library\base\BaseModel,
-	\app\library\constant\ServiceMessage as sm,
+	\app\library\constant\ReturnMessage as rm,
 	\think\Config;
 
 class User extends BaseModel
@@ -66,19 +66,15 @@ class User extends BaseModel
 			case 2:
 				list($key, $value) = ['user_token', $param];
 				break;
+
+			default:
+				return rm::MODEL_ERROR;
+				break;
 		}
 
 		$user = self::where($key, $value)->find();
 
-		if ($user) 
-		{
-			$res['user'] = $user->toArray();
-
-			return $res;
-
-		}
-		
-		return false;
+		return $user ?? false;
 	}
 
 	/**

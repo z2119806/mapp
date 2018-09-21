@@ -23,7 +23,7 @@ class BaseController
 			if (! $token) $this->no(ReturnMessage::USER_NOT_EXIST);
 
 			$this->user = user($token, 2);
-			if ($this->user["user"]['status'] == 0) $this->no(ReturnMessage::USER_IS_EXCEPTION);
+			if ($this->user->status == 0) $this->no(ReturnMessage::USER_IS_EXCEPTION);
 		}
 	}
 
@@ -32,7 +32,9 @@ class BaseController
 	 */
 	public function yesno($data = [], $code = ReturnMessage::REQUEST_FAIL)
 	{
-		$data ? $this->yes($data) : $this->no($code);
+		if (is_numeric($data) && $data > 99) list($code, $data) = [$data, ''];
+		
+		$data ? $this->yes(is_array($data) || is_object($data) ? $data : '') : $this->no($code);
 	}
 
 	/**
