@@ -15,6 +15,7 @@ class ReturnMessage
 	const PASSWORD_NOT_EXIST = 10101;
 
 	const TYPE_TITLE_NULL = 10200;
+	const TYPE_PID_NULL = 10201;
 
 	const EMAIL_ERROR = 10300;
 	const EMAIL_NOT_EXIST = 10301;
@@ -34,6 +35,7 @@ class ReturnMessage
 		self::PASSWORD_NOT_EXIST => "不输密码登陆个啥啊。",
 
 		self::TYPE_TITLE_NULL => "名称好像没输入哦。",
+		self::TYPE_PID_NULL => "务必的务必要有父级id。",
 
 		self::EMAIL_ERROR => "这种邮箱格式目前无法识别啊！",
 		self::EMAIL_NOT_EXIST => "你确定输入email了？",

@@ -12,6 +12,23 @@ class User extends BaseModel
 	];
 
 	/**
+	 * 更新token
+	 */
+	public function saveToken($user)
+	{
+		$id = $user->getAttr('user_id');
+	
+		$user->user_token = $this->setToken($id, $user->getAttr('create_time'));
+
+		if ($user->save())
+			(new UserLoginRecord)->addRecord($id, time(), request()->ip());
+		else
+			return false;
+
+		return true;
+	}
+
+	/**
 	 * 注册
 	 */
 	public function add($data)
@@ -20,17 +37,24 @@ class User extends BaseModel
 
 		try
 		{
+			$ip = request()->ip();
+
 		    $this->user_email = $data['email'];
 		    $this->user_password = $this->setPassword($data['password']);
 		    $this->user_salt = $this->setSalt();
 		    $this->user_name = $data['email'];
 		    $this->user_icon = '...';
-
+		    $this->create_ip = $ip;
 		    $this->save();
 		    
-		    $this->user_token = $this->setToken($this->getAttr('user_id'), $this->getAttr('create_time'));
+		    $id = $this->getAttr('user_id');
+		    $time = $this->getAttr('create_time');
 
+		    $this->user_token = $this->setToken($id, $time);
 		    $this->save();
+
+		    (new UserLoginRecord)->addRecord($id, $time, $ip);
+
 		    $this->commit();
 
 		}catch (\Exception $e) 
@@ -73,7 +97,7 @@ class User extends BaseModel
 		}
 
 		$user = self::where($key, $value)->find();
-
+		
 		return $user ?? false;
 	}
 

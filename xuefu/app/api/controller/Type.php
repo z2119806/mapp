@@ -23,16 +23,38 @@ class Type extends BaseController
 
 		// 验证
 		$validate = Loader::validate("Type");
-		if(! $validate->check($data)) $this->no($validate->getError());
+		if(! $validate->scene('bookself')->check($data)) $this->no($validate->getError());
 		
 		// 返回
 		$this->yesno((new Box)->bookshelfAdd($data['title'], $this->user->user_id));
 	}
 
 	// 书架格子
-	public function parentStorage()                                
+	public function childStorage()                  
 	{
+		// 获取值
+		$data = input();
 
+		// 验证
+		$validate = Loader::validate("Type");
+		if(! $validate->check($data)) $this->no($validate->getError());
+		
+		// 返回
+		$this->yesno();
+	}
+
+	// 操作格子名
+	public function saveChildStorage()
+	{
+		// 获取值
+		$data = input();
+		
+		// 验证
+		$validate = Loader::validate("Type");
+		if(! $validate->scene('storage')->check($data)) $this->no($validate->getError());
+		
+		// 返回
+		$this->yesno((new Box)->bookshelfAdd($data['title'], $this->user->user_id));
 	}
 
 	// 笔记

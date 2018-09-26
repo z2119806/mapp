@@ -6,7 +6,7 @@ use \app\library\constant\ReturnMessage,
 
 class BaseController
 {
-	public $user; // 用户
+	public $user = null; // 用户
 	public $notLogin = []; // 不验证
 
 	public function __construct()
@@ -23,8 +23,20 @@ class BaseController
 			if (! $token) $this->no(ReturnMessage::USER_NOT_EXIST);
 
 			$this->user = user($token, 2);
+
+			if (! $this->user) $this->no(ReturnMessage::USER_NOT_EXIST);
 			if ($this->user->status == 0) $this->no(ReturnMessage::USER_IS_EXCEPTION);
 		}
+	}
+
+	/**
+	 * 处理不必要字段
+	 */
+	public function setReturnData($data)
+	{
+		if (isset($data->user_id)) unset($data->user_id);
+
+		return $data;
 	}
 
 	/**
