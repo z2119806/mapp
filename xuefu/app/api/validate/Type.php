@@ -7,17 +7,19 @@ use \app\library\base\BaseValidate,
 class Type extends BaseValidate
 {
 	protected $rule = [
-		'title' => 'require',
-		'bookshelf_id' => 'require'
+		'title' => 'require|max:30',
+		'box_id' => 'require',
     ];
 
     protected $message = [
         'title.require' => rm::TYPE_TITLE_NULL,
-        'bookshelf_id.require' => rm::TYPE_TITLE_NULL,
+        'box_id.require' => rm::TYPE_PID_NULL,
+        'title.max' => rm::TYPE_TITLE_LENGTH,
     ];
 
     protected $scene = [
-    	'storage' => ['bookshelf_id', 'title'],
-    	'bookself' => ['title'],
+    	'storage' => ['box_id'],
+        'bookself' => ['title'],
+    	'storage_add' => ['box_id', 'title'],
     ];
 }

@@ -17,7 +17,7 @@ class Box extends BaseModel
 	public function bookshelfAdd($title, $uid)
 	{
 		$bookshelf = $this->where("user_id", $uid)
-			->where("box_type", 4)
+			->where("box_type", 3)
 			->where("box_title", $title)
 			->select();
 
@@ -25,7 +25,7 @@ class Box extends BaseModel
 
 		$this->user_id = $uid;
 		$this->box_title = $title;
-		$this->box_type = 4;
+		$this->box_type = 3;
 
 		return $this->save() ?? false;
 	}
@@ -33,10 +33,29 @@ class Box extends BaseModel
 	/**
 	 * 获取我的列表
 	 */
-	public static function getMyBoxList($type, $uid)
+	public static function getMyBookselfList($uid)
 	{
-		return self::where("user_id", $uid)
-			->where("box_type", $type)
+		$data = self::where("user_id", $uid)
+			->where("box_type", 3)
 			->select();
+
+		$data = tool()->encryptToArray($data, 'box_id');
+
+		return $data;
+	}
+
+	/**
+	 * 获取我的格子列表
+	 */
+	public static function getMyChildStoragelist($uid, $pid)
+	{
+		$data = self::where("user_id", $uid)
+			->where("box_type", 2)
+			->where("box_pid", tool()->decryptToString($pid))
+			->select();
+
+		$data = tool()->encryptToArray($data, 'box_id');
+
+		return $data;
 	}
 }

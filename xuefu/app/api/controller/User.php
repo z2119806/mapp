@@ -46,7 +46,7 @@ class User extends BaseController
 
         // 判断注没注册过
         $user = user($data['email']);
-
+        
         $u = new U;
         if ($user)
         {
