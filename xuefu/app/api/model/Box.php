@@ -12,7 +12,7 @@ class Box extends BaseModel
 	];
 
 	/**
-	 * 添加或收藏书架
+	 * 添加书架
 	 */
 	public function bookshelfAdd($title, $uid)
 	{
@@ -20,8 +20,6 @@ class Box extends BaseModel
 			->where("box_type", 3)
 			->where("box_title", $title)
 			->select();
-
-		if ($bookshelf) return rm::BOOKSHELF_IS_EXIST;
 
 		$this->user_id = $uid;
 		$this->box_title = $title;
@@ -57,5 +55,25 @@ class Box extends BaseModel
 		$data = tool()->encryptToArray($data, 'box_id');
 
 		return $data;
+	}
+
+	/**
+	 * 添加格子
+	 */
+	public function storageAdd($title, $uid, $pid)
+	{
+		$storage = $this->where("user_id", $uid)
+			->where("box_type", 2)
+			->where("box_title", $title)
+			->select();
+
+		if ($storage) return rm::STORAGE_NOT_EXIST;
+
+		$this->user_id = $uid; 
+		$this->box_title = $title;
+		$this->box_type = 2;
+		$this->box_pid = $pid;
+
+		return $this->save() ?? false;
 	}
 }

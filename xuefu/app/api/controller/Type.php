@@ -38,7 +38,7 @@ class Type extends BaseController
 		// 验证
 		$validate = Loader::validate("Type");
 		if(! $validate->scene('storage')->check($data)) $this->no($validate->getError());
-		
+
 		// 返回
 		$this->yesno(Box::getMyChildStoragelist($this->user->user_id, $data['box_id']), rm::DATA_IS_NULL);
 	}
@@ -54,7 +54,7 @@ class Type extends BaseController
 		if(! $validate->scene('storage_add')->check($data)) $this->no($validate->getError());
 		
 		// 返回
-		$this->yesno((new Box)->bookshelfAdd($data['title'], $this->user->user_id));
+		$this->yesno((new Box)->storageAdd($data['title'], $this->user->user_id, $data['box_id']));
 	}
 
 	// 笔记

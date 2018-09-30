@@ -25,6 +25,8 @@ class ReturnMessage
 
 	const DATA_IS_NULL = 10500;
 
+	const STORAGE_NOT_EXIST = 10600;
+
 	public static $message = [
 		self::REQUEST_SUCCESS => '',
 		self::REQUEST_FAIL => "这个请求失败了。",
@@ -46,5 +48,7 @@ class ReturnMessage
 		self::BOOKSHELF_IS_EXIST => "这个书架已经存在了, 或许可以试试点击{click}取名",
 
 		self::DATA_IS_NULL => "暂时没有数据哦",
+
+		self::STORAGE_NOT_EXIST => "这个收纳不存在",
 	];
 }
