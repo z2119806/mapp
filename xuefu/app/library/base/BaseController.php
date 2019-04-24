@@ -16,7 +16,7 @@ class BaseController
 		// 验证登陆
 		$url = $request->url();
 		$api = substr($url, strpos($url, '.') + 1);
-
+		
 		if (! in_array($api, $this->notLogin))
 		{
 			$token = $request->header('token');
@@ -70,10 +70,12 @@ class BaseController
 	 */
 	private function result($code, $data = [])
 	{
+		$data = $this->setReturnData($data);
+
 		$json['code'] = $code;
 		$code != 200 && $json['message'] = ReturnMessage::$message[$code];
 		$data && $json['data'] = $data;
-
+		
 		$json = json($json);
 		throw new HttpResponseException($json);
 	}

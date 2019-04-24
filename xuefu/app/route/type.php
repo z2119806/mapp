@@ -10,3 +10,4 @@ Route::get("notepage", "chlidNotepage"); // 笔记页
 Route::get("sticker", "extraSticker"); // 书帖
 Route::post("save.bookshelf", "saveBookshelf"); // 操作书架
 Route::post("save.storage", "saveChildStorage"); // 操作格子
+

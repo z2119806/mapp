@@ -27,7 +27,7 @@ class User extends BaseController
         if(! $validate->scene('exist')->check($data)) $this->no($validate->getError());
 
         // 返回
-        $this->yesno($this->setReturnData(user($data['email'])), ReturnMessage::USER_NOT_EXIST);
+        $this->yesno(user($data['email']), ReturnMessage::USER_NOT_EXIST);
     }
 
     /**
@@ -46,7 +46,6 @@ class User extends BaseController
 
         // 判断注没注册过
         $user = user($data['email']);
-        
         $u = new U;
         if ($user)
         {
@@ -56,6 +55,6 @@ class User extends BaseController
             $user = $u->add($data);
 
         // 返回
-        $this->yesno($this->setReturnData($user));
+        $this->yesno($user);
     }
 }

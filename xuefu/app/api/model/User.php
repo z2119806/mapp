@@ -8,7 +8,7 @@ use \app\library\base\BaseModel,
 class User extends BaseModel
 {
 	protected $visible = [
-		'user_id', 'user_email', 'user_token', 'user_name', 'user_sex', 'user_age', 'user_icon', 'status'
+		'user_id', 'email', 'token', 'name', 'sex', 'age', 'icon', 'status'
 	];
 
 	/**
@@ -18,7 +18,7 @@ class User extends BaseModel
 	{
 		$id = $user->getAttr('user_id');
 	
-		$user->user_token = $this->setToken($id, $user->getAttr('create_time'));
+		$user->token = $this->setToken($id, $user->getAttr('create_time'));
 
 		if ($user->save())
 			(new UserLoginRecord)->addRecord($id, time(), request()->ip());
@@ -39,18 +39,18 @@ class User extends BaseModel
 		{
 			$ip = request()->ip();
 
-		    $this->user_email = $data['email'];
-		    $this->user_password = $this->setPassword($data['password']);
-		    $this->user_salt = $this->setSalt();
-		    $this->user_name = $data['email'];
-		    $this->user_icon = '...';
+		    $this->email = $data['email'];
+		    $this->password = $this->setPassword($data['password']);
+		    $this->salt = $this->setSalt();
+		    $this->name = $data['email'];
+		    $this->icon = '...';
 		    $this->create_ip = $ip;
 		    $this->save();
 		    
 		    $id = $this->getAttr('user_id');
 		    $time = $this->getAttr('create_time');
 
-		    $this->user_token = $this->setToken($id, $time);
+		    $this->token = $this->setToken($id, $time);
 		    $this->save();
 
 		    (new UserLoginRecord)->addRecord($id, $time, $ip);
@@ -64,8 +64,8 @@ class User extends BaseModel
 		    return false;
 		}
 
-		$this->user_age = 0;
-		$this->user_sex = 0;
+		$this->age = 0;
+		$this->sex = 0;
 		$this->status = 1;
 
 		$res['user'] = $this->toArray();
@@ -84,11 +84,11 @@ class User extends BaseModel
 		switch ($type) 
 		{
 			case 1:
-				list($key, $value) = ['user_email', $param];
+				list($key, $value) = ['email', $param];
 				break;
 
 			case 2:
-				list($key, $value) = ['user_token', $param];
+				list($key, $value) = ['token', $param];
 				break;
 
 			default:
