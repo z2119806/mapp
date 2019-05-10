@@ -9,9 +9,8 @@ def step_function(x):
     # x大于0输出1，否则0
     return np.array(x > 0, dtype = np.int)
 
-# 激活函数-sigmoid函数
+# 激活函数-sigmoid函数-主要用于求曲线
 def sigmoid(x):
-    print(np.exp(-x))
     return 1 / (1 + np.exp(-x))
 
 #
@@ -29,7 +28,7 @@ def relu_grad(x):
     grad[x >= 0] = 1
     return grad
 
-#
+# 输出函数-softmax函数-总和1-分类问题-计算概率
 def softmax(x):
     if x.ndim == 2:
         x = x.T
@@ -40,11 +39,11 @@ def softmax(x):
     x = x - np.max(x)  # 溢出对策
     return np.exp(x) / np.sum(np.exp(x))
 
-#
+# 损失函数-均方误差
 def mean_squared_error(y, t):
     return 0.5 * np.sum((y - t) ** 2)
 
-#
+# 损失函数-交叉熵误差
 def cross_entropy_error(y, t):
     if y.ndim == 1:
         t = t.reshape(1, t.size)
