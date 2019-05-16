@@ -19,14 +19,14 @@ def tangent_line(f, x):
     return lambda t: d*t + y
 
 print(numerical_diff(function_1, 5))
-# x = np.arange(0.0, 20.0, 0.1)
-# y = function_1(x)
-# plt.xlabel("x")
-# plt.ylabel("f(x)")
-#
-# tf = tangent_line(function_1, 5)
-# y2 = tf(x)
-#
-# plt.plot(x, y)
-# plt.plot(x, y2)
-# plt.show()
+x = np.arange(0.0, 20.0, 0.1)
+y = function_1(x)
+plt.xlabel("x")
+plt.ylabel("f(x)")
+
+tf = tangent_line(function_1, 5)
+y2 = tf(x)
+
+plt.plot(x, y)
+plt.plot(x, y2)
+plt.show()
