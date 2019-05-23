@@ -29,7 +29,9 @@ for i in range(iters_num):
     # 获取mini-batch
     batch_mask = np.random.choice(train_size, batch_size)
 
+    # 去若干个（随机）训练数据
     x_batch = x_train[batch_mask]
+    # 去若干个对应上面（随机）监督数据
     t_batch = t_train[batch_mask]
 
     # 计算梯度

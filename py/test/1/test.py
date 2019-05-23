@@ -23,4 +23,4 @@ def tu(x, y, x1 = -0.1, y1 = 1.1, xn = 'x', yn = 'y'):
 # sigmoid函数
 x = np.arange(-5.0, 5.0, 0.1)
 y = sigmoid(x)
-tu(x, y)
+# tu(x, y)

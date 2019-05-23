@@ -9,7 +9,13 @@ def step_function(x):
     # x大于0输出1，否则0
     return np.array(x > 0, dtype = np.int)
 
-# 激活函数-sigmoid函数-主要用于求曲线
+"""
+    激活函数-sigmoid函数
+    -主要用于求曲线 
+    -1/大于1取值范围1-0之间 
+    -x为倒序 x升序
+    -为什么用0和1，概率问题0%-100%
+"""
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
