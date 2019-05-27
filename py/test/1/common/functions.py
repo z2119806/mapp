@@ -34,7 +34,12 @@ def relu_grad(x):
     grad[x >= 0] = 1
     return grad
 
-# 输出函数-softmax函数-总和1-分类问题-计算概率
+"""
+softmax函数
+输出函数
+作用：不会对输入元素的大小位置所改变，将各个值转换成总和为1的小数，以便求概率。
+也就是每个输入元素 / 所有元素的总和，引入e是避免循环
+"""
 def softmax(x):
     if x.ndim == 2:
         x = x.T
