@@ -35,6 +35,13 @@ def predict(network, x):
 
     return y
 
+a = [0, 1]
+b = [[4, 1],
+     [2, 2]]
+c = np.dot(a, b)
+print(c)
+exit()
+
 x, t = get_data()
 network = init_network()
 

@@ -26,7 +26,7 @@ def softmax(x):
     c = np.max(x)
     exp_a = np.exp(x - c) # 防止溢出，减去元素最大值，结果不变
     sum_exp_a = np.sum(exp_a)
-    y = exp_a / sum_exp_a：
+    y = exp_a / sum_exp_a
 
     return y
 # def softmax(x):
@@ -38,3 +38,14 @@ def softmax(x):
 #
 #     x = x - np.max(x)  # 溢出对策
 #     return np.exp(x) / np.sum(np.exp(x))
+
+"""
+交叉熵误差
+"""
+def cross_entropy_error(y, t):
+    if y.ndim == 1:
+        t = t.reshape(1, t.size)
+        y = y.reshape(1, y.size)
+
+    batch_size = y.shape[0]
+    return -np.sum(np.log(y[np.arange(batch_size), t] + le-7)) /batch_size
