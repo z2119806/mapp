@@ -5,6 +5,7 @@ import numpy as np
 import pickle # pkl文件
 from dataset.mnist import load_mnist # 数据
 from common.functions import sigmoid, softmax # 函数
+import matplotlib.pylab as plt
 #from PIL import Image
 
 def get_data():
@@ -35,18 +36,55 @@ def predict(network, x):
 
     return y
 
-a = [0, 1]
-b = [[4, 1],
-     [2, 2]]
-c = np.dot(a, b)
-print(c)
-exit()
+# 偏导数
+def function_2(x):
+    return np.sum(x ** 2)
 
-x, t = get_data()
-network = init_network()
+def numerical_gradient(f, x):
+    h = 1e-4
+    grad = np.zeros_like([2,3])
 
-batch_size = 100
-accuracy_cnt = 0
+    for idx in range(x.size):
+        tmp_val = x[idx]
+        # f(x+h)
+        x[idx] = tmp_val + h
+        fxh1 = f(x)
+
+        # f(x-h)
+        x[idx] = tmp_val - h
+        fxh2 = f(x)
+
+        grad[idx] = (fxh1 - fxh2) / (2 * h)
+        x[idx] = tmp_val
+
+    return grad
+
+print(numerical_gradient(function_2, np.array([3.0, 4.0])))
+
+"""
+# 导数测试
+def numerical_diff(f, x):
+    h = 1e-4
+    return (f(x + h) - f(x - h)) / (2 * h)
+
+def function_1(x):
+    return x ** 2
+
+x = np.arange(0, 20)
+y = function_1(x)
+
+plt.xlabel("x")
+plt.ylabel("f(x)")
+plt.plot(x, y)
+plt.show()
+
+print(numerical_diff(function_1, 20))
+"""
+# x, t = get_data()
+# network = init_network()
+#
+# batch_size = 100
+# accuracy_cnt = 0
 
 # def img_show(img):
 #     pil_img = Image.fromarray(np.uint8(img))
@@ -60,34 +98,13 @@ accuracy_cnt = 0
 # print(t[0])
 # exit()
 
-for i in range(0, len(x), batch_size):
-    x_batch = x[i:i+batch_size]
-    y_batch = predict(network, x_batch)
-    p = np.argmax(y_batch, axis=1)
-    accuracy_cnt += np.sum(p == t[i:i+batch_size])
-    #p = np.argmax(y) # 获取概率最高的元素的索引
-    # if p == t[i]:
-    #     accuracy_cnt += 1
-
-print("Accuracy:" + str(float(accuracy_cnt) / len(x)))
-
-def m(y, t):
-    a = y - t
-    b = a ** 2
-    s = np.sum(b)
-    x = 0.5 * s
-    return x
-
-def c(y, t):
-    delta = 1e-7
-    x = np.log(np.array([0.1,0.6,0.05]))
-    a = np.log(y + delta)
-    b = t * a
-    c = np.sum(b)
-    d = -c
-    return d
-
-t = [0,0,1,0,0,0,0,0,0,0]
-y = [0.1,0.05,0.6,0.0,0.05,0.1,0.0,0.1,0.0,0.0]
-a = c(np.array(y),np.array(t))
-print(a)
+# for i in range(0, len(x), batch_size):
+#     x_batch = x[i:i+batch_size]
+#     y_batch = predict(network, x_batch)
+#     p = np.argmax(y_batch, axis=1)
+#     accuracy_cnt += np.sum(p == t[i:i+batch_size])
+#     #p = np.argmax(y) # 获取概率最高的元素的索引
+#     # if p == t[i]:
+#     #     accuracy_cnt += 1
+#
+# print("Accuracy:" + str(float(accuracy_cnt) / len(x)))
