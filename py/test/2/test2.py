@@ -42,7 +42,7 @@ def function_2(x):
 
 def numerical_gradient(f, x):
     h = 1e-4
-    grad = np.zeros_like([2,3])
+    grad = np.zeros_like(x)
 
     for idx in range(x.size):
         tmp_val = x[idx]
