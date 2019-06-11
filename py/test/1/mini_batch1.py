@@ -26,7 +26,7 @@ iter_per_epoch = max(train_size / batch_size, 1)
 network = TwoLayerNet(input_size = 784, hidden_size = 50, output_size = 10)
 
 for i in range(iters_num):
-    # 获取mini-batch
+    # 获取mini-batch 60000 100
     batch_mask = np.random.choice(train_size, batch_size)
 
     # 去若干个（随机）训练数据

@@ -20,7 +20,6 @@ class simpleNet:
 
         return loss
 
-print(np.random.choice(a=5, size=3, replace=False, p=[0.2, 0.1, 0.3, 0.4, 0.0]))
 
 # x = np.array([0.6, 0.9])
 # t = np.array([0, 0, 1])
